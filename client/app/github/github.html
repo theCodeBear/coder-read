@@ -1,6 +1,6 @@
-<input type='text' ng-model='user.name' autofocus>
-<button create-user>Submit User</button>
+<input type='text' ng-model='github.username' placeholder='Github Username' autofocus>
+<input type='text' ng-model='github.reponame' placeholder="User's repo name">
+<input type='text' ng-model='github.filepath' placeholder='Repo file path'>
+<button submit-github>Show Repo File</button>
 
-<ul>
-  <li ng-repeat='userName in userIndex track by $index'>{{ userName }}</li>
-</ul>
+<div ng-if='githubApi'> <pre><code>{{githubApi}}</code></pre> </div>
