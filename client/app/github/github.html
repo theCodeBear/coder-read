@@ -1,6 +1,21 @@
+<!-- Get contents of a file-->
 <input type='text' ng-model='github.username' placeholder='Github Username' autofocus>
 <input type='text' ng-model='github.reponame' placeholder="User's repo name">
 <input type='text' ng-model='github.filepath' placeholder='Repo file path'>
-<button submit-github>Show Repo File</button>
+<button submit-github>Show Repo File</button><br>
 
-<div ng-if='githubApi'> <pre><code>{{githubApi}}</code></pre> </div>
+ <!-- get SHA for tree -->
+<input type='text' ng-model='github.username' placeholder='Github Username' autofocus>
+<input type='text' ng-model='github.reponame' placeholder="User's repo name">
+<input type='text' ng-model='github.branchname' placeholder='Branch name'>
+<button github-branch>Get SHA for repo branch</button>
+
+<div ng-if='directoryStructure'>
+  <pre><code id='code'>
+    <div ng-repeat='file in directoryStructure'><a ng-click='getFile($index)'>{{file}}</a></div>
+  </code></pre>
+</div>
+
+<div ng-if='githubApi'>
+  <pre><code>{{githubApi}}</code></pre>
+</div>

@@ -10,6 +10,18 @@ angular.module('coderRead')
     return $http.get('http://api.github.com/repos/'+username+'/'+reponame+'/contents/'+filepath);
   }
 
-  return { getFile: getFile };
+  function getBranch(username, reponame, branchname) {
+    return $http.get('http://api.github.com/repos/'+username+'/'+reponame+'/branches/'+branchname);
+  }
+
+  function getTree(getTreeUrl) {
+    return $http.get(getTreeUrl+'?recursive=1');
+  }
+
+  return {
+    getFile: getFile,
+    getBranch: getBranch,
+    getTree: getTree
+  };
 
 });

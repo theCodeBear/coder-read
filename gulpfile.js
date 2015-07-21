@@ -59,5 +59,5 @@ gulp.task('watch', function() {
   gulp.watch(['./client/**/*.js'], ['build-js']);
   gulp.watch(['./client/**/*.js', './server/**/*.js'], ['jshint']);
   gulp.watch('./client/assets/styles/**/*.scss', ['build-css']);
-  gulp.watch('./client/**/*', ['copy']);
+  gulp.watch(['./client/**/*', '!./client/assets/styles/**/*'], ['copy']);
 });
