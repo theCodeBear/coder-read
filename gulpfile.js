@@ -50,7 +50,7 @@ gulp.task('clean:public', function(cb) {
 
 // copy client folder to public folder
 gulp.task('copy', ['clean:public'], function() {
-  return gulp.src('./client/**/*')
+  return gulp.src(['./client/**/*', '!./client/assets/styles/**/*'])
     .pipe(copy('./public', {prefix: 1}));
 });
 
