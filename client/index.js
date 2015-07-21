@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coderRead', ['ui.router'])
+angular.module('coderRead', ['ui.router', 'ngSanitize'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

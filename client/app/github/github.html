@@ -18,5 +18,7 @@
 
 <div ng-if='githubApi'>
   <h2 class='text-center'> {{filepath}} </h2>
-  <pre><code>{{githubApi}}</code></pre>
+  <pre><code>
+    <ol class='codeList' ng-bind-html='githubApi'></ol>
+  </code></pre>
 </div>

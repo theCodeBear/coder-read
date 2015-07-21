@@ -53,7 +53,6 @@ angular.module('coderRead')
             scope.directoryStructure = arrToDisplay;
             scope.githubTree = tree.data.tree;
             console.log('githubTree', scope.githubTree);
-
           });
         }).catch(function(data) {
           console.log('error getting github branch', data);
