@@ -13,7 +13,10 @@ angular.module('coderRead')
     $scope.filepath = $scope.githubTree[index].path;
     Github.getFile($scope.github.username, $scope.github.reponame, $scope.filepath, $scope.github.branchname)
     .then(function(data) {
-      $scope.githubApi = createCodeOrderedList(data.data).innerHTML;
+      // if json file just put it on $scope (ng-prettyjson will handle it)
+      if ($scope.filepath.slice(-4) === 'json') $scope.githubApi = data.data;
+      // if non-json file, break it up into an ordered list
+      else $scope.githubApi = createCodeOrderedList(data.data).innerHTML;
     });
   };
 
@@ -21,14 +24,13 @@ angular.module('coderRead')
     return filePath[filePath.length-1] !== '/';
   }
 
+  $scope.fileIsJson = function(filePath) {
+    return filePath.slice(-4) === 'json';
+  }
+
   // create an html ordered list from the contents of the file
   function createCodeOrderedList(file) {
-    console.log(typeof file);
-    if (typeof file === 'object') //{
-      file = JSON.stringify(file);
-      /*file = file.split(/([{,}])/g);
-      console.log(file);
-    } else*/ file = file.split('\n');
+    file = file.split('\n');
     var liNode = '', text = '';
     var list = document.createElement('OL');
     file.forEach(function(line, index) {

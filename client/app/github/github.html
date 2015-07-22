@@ -34,8 +34,10 @@
 
 <div ng-if='githubApi' class='col-xs-12 col-md-7'>
   <h2 class='text-center'> {{filepath}} </h2>
-  <pre><code>
+  <pre ng-if='!fileIsJson(filepath)'><code>
     <ol class='codeList' ng-bind-html='githubApi'></ol>
+  </code></pre>
+  <pre ng-if='fileIsJson(filepath)' pretty-json='githubApi'><code>
   </code></pre>
 </div>
 

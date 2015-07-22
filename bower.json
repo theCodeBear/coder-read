@@ -16,6 +16,7 @@
     "angular": "~1.4.0",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.4",
-    "angular-sanitize": "~1.4.3"
+    "angular-sanitize": "~1.4.3",
+    "ng-prettyjson": "~0.1.9"
   }
 }
