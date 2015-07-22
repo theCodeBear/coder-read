@@ -11,7 +11,7 @@ angular.module('coderRead')
 
   $scope.getFile = function(index) {
     $scope.filepath = $scope.githubTree[index].path;
-    Github.getFile($scope.github.username, $scope.github.reponame, $scope.filepath)
+    Github.getFile($scope.github.username, $scope.github.reponame, $scope.filepath, $scope.github.branchname)
     .then(function(data) {
       $scope.githubApi = createCodeOrderedList(data.data).innerHTML;
     });
