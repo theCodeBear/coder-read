@@ -31,6 +31,19 @@ angular.module('coderRead')
     restrict: 'A',
     link: function(scope, elem, attrs) {
       elem.bind('click', function() {
+        Github.getRepo(scope.github.username, scope.github.reponame).then(function(repoResult) {
+          scope.repo = {
+            name: repoResult.data.name,
+            description: repoResult.data.description,
+            url: repoResult.data.html_url,
+            username: repoResult.data.owner.login,
+            userGithubLink: repoResult.data.owner.html_url,
+            userAvatar: repoResult.data.owner.avatar_url
+          };
+        }).catch(function(repoResult) {
+          console.log('error getting github repo', repoResult);
+          scope.githubApi = repoResult.data.message;
+        });
         Github.getBranch(scope.github.username,
                          scope.github.reponame,
                          scope.github.branchname)

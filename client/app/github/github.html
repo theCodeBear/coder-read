@@ -10,15 +10,35 @@
 <input type='text' ng-model='github.branchname' placeholder='Branch name'>
 <button github-branch>Get SHA for repo branch</button>
 
-<div ng-if='directoryStructure'>
-  <pre><code id='code'>
-    <div ng-repeat='file in directoryStructure'><a ng-click='getFile($index)'>{{file}}</a></div>
-  </code></pre>
+<div ng-if='directoryStructure' class='col-xs-12'>
+  <div class='text-center h2 col-xs-12'>
+    <a ng-href='{{repo.url}}'>{{repo.name.toUpperCase()}}</a>
+  </div>
+  <div class='text-center h4'>
+    ({{github.branchname}})
+  </div>
+  <p class='text-center'>{{repo.description}}</p>
+  <div class='col-xs-12 col-sm-4 col-sm-offset-2'>
+    <code id='code'>
+      <div class='projectHierarchy' ng-repeat='file in directoryStructure'>
+        <a ng-if='isAFile(file)' ng-click='getFile($index)'>{{file}}</a>
+        <span ng-if='!isAFile(file)'>{{file}}</span>
+      </div>
+    </code>
+  </div>
+  <div class='col-xs-12 col-sm-6 text-center h3' id='repoDescription'>
+    <img class='roundPic' ng-src='{{repo.userAvatar}}' width='100' height='100'><br>
+    <a ng-href='{{repo.userGithubLink}}'>{{repo.username}}</a>
+  </div>
 </div>
 
-<div ng-if='githubApi'>
+<div ng-if='githubApi' class='col-xs-12 col-md-7'>
   <h2 class='text-center'> {{filepath}} </h2>
   <pre><code>
     <ol class='codeList' ng-bind-html='githubApi'></ol>
   </code></pre>
+</div>
+
+<div class='col-xs-12 col-md-5' ng-if='githubApi'>
+  <h2 class='text-center'> DISCUSSION SECTION </h2>
 </div>

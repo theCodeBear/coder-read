@@ -4,7 +4,7 @@ angular.module('coderRead')
 
 .controller('GithubCtrl', function($scope, Github) {
 
-  $scope.github ={};
+  $scope.github = {};
   $scope.github.username = 'thecodebear';
   $scope.github.reponame = 'fortress-assault';
   $scope.github.branchname = 'master';
@@ -16,6 +16,10 @@ angular.module('coderRead')
       $scope.githubApi = createCodeOrderedList(data.data).innerHTML;
     });
   };
+
+  $scope.isAFile = function(filePath) {
+    return filePath[filePath.length-1] !== '/';
+  }
 
   // create an html ordered list from the contents of the file
   function createCodeOrderedList(file) {

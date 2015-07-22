@@ -2,6 +2,13 @@ a {
   cursor: pointer;
 }
 
+pre {
+  word-wrap: normal;
+  code {
+    white-space: pre;
+  }
+}
+
 .codeList {
   li {
     &:hover {
@@ -9,4 +16,13 @@ a {
       color: yellow;
     }
   }
+}
+
+.projectHierarchy {
+  /*margin-left: 50px;*/
+  font-size: 1.2em;
+}
+
+.roundPic {
+  border-radius: 50%;
 }
