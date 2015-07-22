@@ -23,7 +23,12 @@ angular.module('coderRead')
 
   // create an html ordered list from the contents of the file
   function createCodeOrderedList(file) {
-    file = file.split('\n');
+    console.log(typeof file);
+    if (typeof file === 'object') //{
+      file = JSON.stringify(file);
+      /*file = file.split(/([{,}])/g);
+      console.log(file);
+    } else*/ file = file.split('\n');
     var liNode = '', text = '';
     var list = document.createElement('OL');
     file.forEach(function(line, index) {
