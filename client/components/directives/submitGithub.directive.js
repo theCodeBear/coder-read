@@ -16,8 +16,6 @@ angular.module('coderRead')
         }).catch(function(data) {
           console.log('error getting github file', data);
           scope.githubApi = data.data.message;
-        }).finally(function() {
-
         });
       });
     }
@@ -48,6 +46,7 @@ angular.module('coderRead')
                          scope.github.reponame,
                          scope.github.branchname)
         .then(function(data) {
+          scope.repo.branchName = data.data.name;
           Github.getTree(data.data.commit.commit.tree.url)
           .then(function(tree) {
             var arrToDisplay = [];
@@ -76,7 +75,7 @@ angular.module('coderRead')
 
 String.prototype.repeat = function(num) {
   return new Array(num+1).join(this);
-}
+};
 
 // creates a nested object of the project hierarchy
 // function createDirectoriesObj(obj, pathArray, filename, node) {
