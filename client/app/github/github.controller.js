@@ -10,19 +10,15 @@ angular.module('coderRead')
   $scope.github.branchname = 'master';
 
   $scope.getFile = function(index) {
-    // $scope.filename = $scope.directoryStructure[index].match(/\w+[\W+\w+]*/)[0];
     $scope.filepath = $scope.githubTree[index].path;
     Github.getFile($scope.github.username, $scope.github.reponame, $scope.filepath)
     .then(function(data) {
-      var fileContents = data.data
-      fileContents = addLineNumbers(fileContents);
-      $scope.githubApi = fileContents.innerHTML;
-      console.log('fileconts', $scope.githubApi);
-      console.log(typeof $scope.githubApi)
+      $scope.githubApi = createCodeOrderedList(data.data).innerHTML;
     });
   };
 
-  function addLineNumbers(file) {
+  // create an html ordered list from the contents of the file
+  function createCodeOrderedList(file) {
     file = file.split('\n');
     var liNode = '', text = '';
     var list = document.createElement('OL');
@@ -30,7 +26,6 @@ angular.module('coderRead')
       liNode = document.createElement('LI');
       text = document.createTextNode(file[index]);
       liNode.appendChild(text);
-      console.log(document.getElementById('codelines'));
       list.appendChild(liNode);
     });
     return list;
