@@ -2,6 +2,10 @@ a {
   cursor: pointer;
 }
 
+nav {
+  margin-top: 1em;
+}
+
 pre {
   word-wrap: normal;
   code {
@@ -26,3 +30,25 @@ pre {
 .roundPic {
   border-radius: 50%;
 }
+
+.navIcons {
+  float: right;
+  .navIcon {
+    margin-right: 1em;
+  }
+}
+
+.navIcon {
+  &:hover {
+    color: purple;
+  }
+}
+
+#navLogo {
+  margin-left: 0.5em;
+}
+
+.fa-star:hover {
+  color: gold;
+}
+

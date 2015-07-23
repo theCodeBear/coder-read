@@ -25,7 +25,7 @@ gulp.task('jshint', function() {
 gulp.task('build-css', function() {
   return gulp.src('./client/assets/styles/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/styles'));
 });

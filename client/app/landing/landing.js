@@ -8,7 +8,8 @@ angular.module('coderRead')
 
   .state('landing', {
     url: '/',
-    templateUrl: 'app/landing/landing.html'
+    templateUrl: 'app/landing/landing.html',
+    controller: 'LandingCtrl'
   });
 
 });
