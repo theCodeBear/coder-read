@@ -2,9 +2,8 @@
 
 angular.module('coderRead')
 
-.controller('LandingCtrl', function() {
+.controller('LandingCtrl', function($rootScope) {
 
-  // allow bootstrap tooltips on this page
-  angular.element('[data-toggle="tooltip"]').tooltip();
+  $rootScope.loggedIn = false;
 
 });

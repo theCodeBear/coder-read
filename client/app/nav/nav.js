@@ -6,10 +6,10 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('app.feed', {
-    url: '/feed',
-    templateUrl: 'app/feed/feed.html',
-    controller: 'FeedCtrl'
+  .state('app', {
+    abstract: true,
+    templateUrl: 'app/nav/nav.html',
+    controller: 'NavCtrl'
   });
 
 });

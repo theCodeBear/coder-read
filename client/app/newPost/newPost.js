@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('newPost', {
+  .state('app.newPost', {
     url: '/newPost',
     templateUrl: 'app/newPost/newPost.html',
     controller: 'NewPostCtrl'

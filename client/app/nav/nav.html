@@ -1,0 +1,22 @@
+<nav>
+  <!-- website icon placeholder -->
+  <i id='navLogo' class="navIcon fa fa-code fa-3x"></i>
+  <div class='navIcons'>
+    <!-- the feed -->
+    <i class="navIcon fa fa-signal fa-3x" data-toggle='tooltip' data-placement='bottom' title='Feed' ui-sref='app.feed'></i>
+    <!-- show recommended posts -->
+    <i class="navIcon fa fa-star fa-3x" data-toggle='tooltip' data-placement='bottom' title='Favs' ui-sref='app.favorites' ng-show='loggedIn'></i>
+    <!-- search titles of posts -->
+    <i class="navIcon fa fa-search fa-3x" data-toggle='tooltip' data-placement='bottom' title='Search' ui-sref='app.search'></i>
+    <!-- create new post -->
+    <i class="navIcon fa fa-plus fa-3x" data-toggle='tooltip' data-placement='bottom' title='New Post' ui-sref='app.newPost' ng-show='loggedIn'></i>
+    <!-- show posts you've commented on -->
+    <i class="navIcon fa fa-comment fa-3x" data-toggle='tooltip' data-placement='bottom' title='Your Comments' ui-sref='app.userComments' ng-show='loggedIn'></i>
+    <!-- account -->
+    <i class="navIcon fa fa-cog fa-3x" data-toggle='tooltip' data-placement='bottom' title='Account' ui-sref='app.account' ng-show='loggedIn'></i>
+    <!-- login -->
+    <i class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ui-sref='app.feed' ng-click='login()' ng-show='!loggedIn'></i>
+  </div>
+</nav>
+
+<div ui-view></div>

@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('favorites', {
+  .state('app.favorites', {
     url: '/favorites',
     templateUrl: 'app/favorites/favorites.html',
     controller: 'FavoritesCtrl'

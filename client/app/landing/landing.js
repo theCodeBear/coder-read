@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('landing', {
+  .state('app.landing', {
     url: '/',
     templateUrl: 'app/landing/landing.html',
     controller: 'LandingCtrl'

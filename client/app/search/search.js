@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('search', {
+  .state('app.search', {
     url: '/search',
     templateUrl: 'app/search/search.html',
     controller: 'SearchCtrl'

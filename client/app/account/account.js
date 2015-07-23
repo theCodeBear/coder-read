@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('account', {
+  .state('app.account', {
     url: '/account',
     templateUrl: 'app/account/account.html',
     controller: 'AccountCtrl'

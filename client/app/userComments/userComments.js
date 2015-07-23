@@ -6,7 +6,7 @@ angular.module('coderRead')
 
   $stateProvider
 
-  .state('userComments', {
+  .state('app.userComments', {
     url: '/userComments',
     templateUrl: 'app/userComments/userComments.html',
     controller: 'UserCommentsCtrl'
