@@ -9,5 +9,6 @@ angular.module('coderRead', ['ui.router', 'ngSanitize', 'ngPrettyJson', 'satelli
   $authProvider.github({
     clientId: '4122105d3a016771284e'
   });
+  $authProvider.httpInterceptor = false;
 
 });
