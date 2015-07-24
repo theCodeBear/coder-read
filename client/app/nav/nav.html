@@ -15,8 +15,9 @@
     <!-- account -->
     <i class="navIcon fa fa-cog fa-3x" data-toggle='tooltip' data-placement='bottom' title='Account' ui-sref='app.account' ng-show='loggedIn'></i>
     <!-- login -->
-    <i class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ui-sref='app.feed' ng-click='login()' ng-show='!loggedIn'></i>
+    <i class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ng-click='authenticate("github")' ng-show='!loggedIn'></i>
   </div>
+  <p ng-click='unLinkGithub()'>Unlink From Github</p>
 </nav>
 
 <div ui-view></div>

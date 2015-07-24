@@ -22,11 +22,11 @@ angular.module('coderRead')
 
   $scope.isAFile = function(filePath) {
     return filePath[filePath.length-1] !== '/';
-  }
+  };
 
   $scope.fileIsJson = function(filePath) {
     return filePath.slice(-4) === 'json';
-  }
+  };
 
   // create an html ordered list from the contents of the file
   function createCodeOrderedList(file) {
