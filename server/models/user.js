@@ -52,7 +52,7 @@ userSchema.methods.token = function() {
   var payload = {
     sub: this._id,
     iat: moment().unix(),
-    exp: moment().add(14, 'days').unix()
+    exp: moment().add(2, 'days').unix()
   };
   return jwt.encode(payload, process.env.TOKEN_SECRET);
 };

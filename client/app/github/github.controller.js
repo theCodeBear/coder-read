@@ -2,7 +2,7 @@
 
 angular.module('coderRead')
 
-.controller('GithubCtrl', function($scope, Github) {
+.controller('GithubCtrl', function($scope, Github, $state) {
 
   $scope.github = {};
   $scope.github.username = 'thecodebear';

@@ -2,42 +2,50 @@
 
 angular.module('coderRead')
 
-.factory('User', function($http, $q) {
+.factory('User', function($http, $q, $window, $auth) {
 
-// return a promise with all the user data in the database
-  function get() {
-    return $http.get('/users');
-  }
+// PRIVATE VARIABLES
+  var _user = {};
 
-// return a promise with an array of all user names from the database
-  function getUserNames() {
-    var deferred = $q.defer();
-    get().then(function(data) {
-      deferred.resolve(mapUsersToNames(data.data.users));
-    });
-    return deferred.promise;
-  }
 
-// return a promise after with array of all user data from the
-// database after posting a new user to the database
-  function create(user) {
-    return $http.post('/users', user);
-  }
-
-// take array of user data from DB, map it to an array of only
-// the users' names and return this array
-  function mapUsersToNames(users) {
-    return users.map(function(user) {
-      return user.name;
-    });
-  }
-
-// expose public API for this service
-  return {
+// PUBLIC SERVICE OBJECT
+  var service = {
     get: get,
-    getUserNames: getUserNames,
-    create: create,
-    mapUsersToNames: mapUsersToNames
+    save: save, 
+    logout: logout,
+    clear: clear
   };
+
+
+  return service;
+
+// PRIVATE FUNCTIONS
+
+
+
+// PUBLIC FUNCTIONS
+
+  // get user
+  function get() {
+    return _user;
+  }
+
+  // save user to service
+  function save(updatedUser) {
+    _user = updatedUser;
+    $window.localStorage.setItem('user', JSON.stringify(_user));
+  }
+
+  // logout user
+  function logout() {
+    $auth.logout();
+    $window.localStorage.clear();//removeItem('coderRead.user');
+    service.clear();
+  }
+
+  // clear user data from service
+  function clear() {
+    _user = {};
+  }
 
 });

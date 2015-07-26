@@ -9,7 +9,10 @@ angular.module('coderRead')
   .state('app.newPost', {
     url: '/newPost',
     templateUrl: 'app/newPost/newPost.html',
-    controller: 'NewPostCtrl'
+    controller: 'NewPostCtrl',
+    data: {
+      authenticate: true
+    }
   });
 
 });

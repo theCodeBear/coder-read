@@ -9,6 +9,9 @@ angular.module('coderRead')
   .state('githubSubmission', {
     url: '/githubSubmission',
     templateUrl: 'app/github/github.html',
-    controller: 'GithubCtrl'
+    controller: 'GithubCtrl',
+    data: {
+      authenticate: true
+    }
   });
 });

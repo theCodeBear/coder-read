@@ -9,7 +9,10 @@ angular.module('coderRead')
   .state('app.favorites', {
     url: '/favorites',
     templateUrl: 'app/favorites/favorites.html',
-    controller: 'FavoritesCtrl'
+    controller: 'FavoritesCtrl',
+    data: {
+      authenticate: true
+    }
   });
 
 });

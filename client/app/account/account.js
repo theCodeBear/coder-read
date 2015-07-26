@@ -9,7 +9,10 @@ angular.module('coderRead')
   .state('app.account', {
     url: '/account',
     templateUrl: 'app/account/account.html',
-    controller: 'AccountCtrl'
+    controller: 'AccountCtrl',
+    data: {
+      authenticate: true
+    }
   });
 
 });
