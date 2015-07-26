@@ -1,6 +1,6 @@
 <nav>
   <!-- website icon placeholder -->
-  <i id='navLogo' class="navIcon fa fa-code fa-3x"></i>
+  <i id='navLogo' class="navIcon fa fa-code fa-3x" ui-sref='app.landing'></i>
   <div class='navIcons'>
     <!-- the feed -->
     <i class="navIcon fa fa-signal fa-3x" data-toggle='tooltip' data-placement='bottom' title='Feed' ui-sref='app.feed'></i>
@@ -18,5 +18,7 @@
     <i github-login class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ng-show='!isLoggedIn()'></i>
   </div>
 </nav>
+
+<a ui-sref='githubSubmission'>Go to Submit Page</a><br>
 
 <div ui-view></div>

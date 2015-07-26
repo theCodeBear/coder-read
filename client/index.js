@@ -18,6 +18,12 @@ angular.module('coderRead', ['ui.router', 'ngSanitize', 'ngPrettyJson', 'satelli
   }
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+    // if trying to go to landing page but logged in, go to feed instead
+    if (toState.name === 'app.landing' && $auth.isAuthenticated()) {
+      event.preventDefault();
+      $state.go('app.feed');
+    }
+
     // if route requires authentication
     if (toState.data && toState.data.authenticate === true) {
       var encodedToken = $window.localStorage.getItem('satellizer_token');
