@@ -30,7 +30,7 @@ angular.module('coderRead')
     return _user;
   }
 
-  // save user to service
+  // save user to service and localStorage
   function save(updatedUser) {
     _user = updatedUser;
     $window.localStorage.setItem('user', JSON.stringify(_user));
@@ -39,7 +39,7 @@ angular.module('coderRead')
   // logout user
   function logout() {
     $auth.logout();
-    $window.localStorage.clear();//removeItem('coderRead.user');
+    $window.localStorage.clear();
     service.clear();
   }
 

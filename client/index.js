@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coderRead', ['ui.router', 'ngSanitize', 'ngPrettyJson', 'satellizer', 'angular-jwt'])
+angular.module('coderRead', ['ui.router', 'ngSanitize', 'ngPrettyJson', 'satellizer', 'angular-jwt', 'ngResource'])
 
 .run(function($auth, $window, $http, $rootScope, $state, jwtHelper, User) {
 
