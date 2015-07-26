@@ -8,7 +8,10 @@
 #site-canvas {
   width: 100%;
   height: 100vh;
-  position: relative;
+  top: 0;
+  padding-top:0;
+  margin-top: 0;
+  position: absolute;
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: .3s ease all;
@@ -26,11 +29,16 @@
   color: white;
   margin-top: -15px;
 
+  .list-group {
+    padding-top: 15px;
+  }
+
   .list-group-item {
     border: none;
     padding-left: 25px;
     cursor: pointer;
     font-weight: 100;
+    border-radius: 0;
     &:hover {
       color: black;
       background-color: white;
@@ -113,6 +121,8 @@ pre {
   width: 100%;
   font-size: 4em;
   padding-left: 0.3em;
+  border: none;
+  border-bottom: 1px solid lightgray;
 }
 
 .blackBack {
@@ -122,5 +132,9 @@ pre {
 .whiteOnBlack {
   color: white;
   background-color: black;
+}
+
+#content {
+  height: 100vh;
 }
 
