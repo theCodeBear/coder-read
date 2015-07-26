@@ -24,6 +24,7 @@ angular.module('coderRead')
     restrict: 'A',
     link: function(scope, elem, attrs) {
       elem.bind('click', function() {
+        scope.toggleNav();
         User.logout();
         $state.go('app.landing');
       });

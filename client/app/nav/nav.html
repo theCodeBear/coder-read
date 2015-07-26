@@ -1,4 +1,15 @@
-<nav>
+<div id='site-wrapper'>
+    <div id='site-canvas'>
+      <div id='site-menu'>
+        <ul class='list-group blackBack'>
+          <li class='list-group-item whiteOnBlack'> Profile </li>
+          <li class='list-group-item whiteOnBlack'> FAQ </li>
+          <li class='list-group-item whiteOnBlack'> Account </li>
+          <li logout-user class='list-group-item whiteOnBlack'> Logout </li>
+        </ul>
+      </div>
+
+<nav class='sideMenu'>
   <!-- website icon placeholder -->
   <i id='navLogo' class="navIcon fa fa-code fa-3x" ui-sref='app.landing'></i>
   <div class='navIcons'>
@@ -13,7 +24,7 @@
     <!-- show posts you've commented on -->
     <i class="navIcon fa fa-comment fa-3x" data-toggle='tooltip' data-placement='bottom' title='Your Comments' ui-sref='app.userComments' ng-show='isLoggedIn()'></i>
     <!-- account -->
-    <i logout-user class="navIcon fa fa-cog fa-3x" data-toggle='tooltip' data-placement='bottom' title='Account' ui-sref='app.account' ng-show='isLoggedIn()'></i>
+    <i  class="navIcon fa fa-cog fa-3x toggle-nav" data-toggle='tooltip' data-placement='bottom' title='Account' ui-sref='app.account' ng-show='isLoggedIn()'></i>
     <!-- login/signup -->
     <i github-login class="navIcon fa fa-sign-in fa-3x" data-toggle='tooltip' data-placement='bottom' title='Login with Github' ng-show='!isLoggedIn()'></i>
   </div>
@@ -21,4 +32,7 @@
 
 <a ui-sref='githubSubmission'>Go to Submit Page</a><br>
 
-<div ui-view></div>
+<div ui-view class='sideMenu'></div>
+
+</div>
+</div>
