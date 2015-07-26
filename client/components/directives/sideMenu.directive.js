@@ -2,7 +2,7 @@
 
 angular.module('coderRead')
 
-.directive('clickClose', function() {
+.directive('closeSidemenu', function() {
 
   return {
     restrict: 'A',
@@ -14,5 +14,5 @@ angular.module('coderRead')
       });
     }
   };
-  
+
 });

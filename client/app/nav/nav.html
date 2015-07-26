@@ -2,8 +2,8 @@
   <div id='site-canvas'>
     <div id='site-menu'>
       <ul class='list-group blackBack'>
-        <li class='list-group-item whiteOnBlack' ui-sref='app.profile'> Profile </li>
-        <li class='list-group-item whiteOnBlack' ui-sref='app.faq'> FAQ </li>
+        <li close-sidemenu class='list-group-item whiteOnBlack' ui-sref='app.profile'> Profile </li>
+        <li close-sidemenu class='list-group-item whiteOnBlack' ui-sref='app.faq'> FAQ </li>
         <li logout-user class='list-group-item whiteOnBlack'> Logout </li>
       </ul>
     </div>
@@ -13,15 +13,15 @@
       <i id='navLogo' class="navIcon fa fa-code fa-3x" ui-sref='app.landing'></i>
       <div class='navIcons'>
         <!-- the feed -->
-        <i click-close class="navIcon fa fa-signal fa-3x" data-toggle='tooltip' data-placement='bottom' title='Feed' ui-sref='app.feed'></i>
+        <i close-sidemenu class="navIcon fa fa-signal fa-3x" data-toggle='tooltip' data-placement='bottom' title='Feed' ui-sref='app.feed'></i>
         <!-- show recommended posts -->
-        <i click-close class="navIcon fa fa-star fa-3x" data-toggle='tooltip' data-placement='bottom' title='Favs' ui-sref='app.favorites' ng-show='isLoggedIn()'></i>
+        <i close-sidemenu class="navIcon fa fa-star fa-3x" data-toggle='tooltip' data-placement='bottom' title='Favs' ui-sref='app.favorites' ng-show='isLoggedIn()'></i>
         <!-- search titles of posts -->
-        <i click-close class="navIcon fa fa-search fa-3x" data-toggle='tooltip' data-placement='bottom' title='Search' ui-sref='app.search'></i>
+        <i close-sidemenu class="navIcon fa fa-search fa-3x" data-toggle='tooltip' data-placement='bottom' title='Search' ui-sref='app.search'></i>
         <!-- create new post -->
-        <i click-close class="navIcon fa fa-plus fa-3x" data-toggle='tooltip' data-placement='bottom' title='New Post' ui-sref='app.newPost' ng-show='isLoggedIn()'></i>
+        <i close-sidemenu class="navIcon fa fa-plus fa-3x" data-toggle='tooltip' data-placement='bottom' title='New Post' ui-sref='app.newPost' ng-show='isLoggedIn()'></i>
         <!-- show posts you've commented on -->
-        <i click-close class="navIcon fa fa-comment fa-3x" data-toggle='tooltip' data-placement='bottom' title='Your Comments' ui-sref='app.userComments' ng-show='isLoggedIn()'></i>
+        <i close-sidemenu class="navIcon fa fa-comment fa-3x" data-toggle='tooltip' data-placement='bottom' title='Your Comments' ui-sref='app.userComments' ng-show='isLoggedIn()'></i>
         <!-- FAQ -->
         <i class="navIcon fa fa-question fa-3x" data-toggle='tooltip' data-placement='bottom' title='What is CoderRead?' ui-sref='app.faq' ng-show='!isLoggedIn()'></i>
         <!-- Side Menu -->
@@ -33,7 +33,7 @@
 
     <a ui-sref='githubSubmission'>Go to Submit Page</a><br>
 
-    <div click-close id='content' ui-view></div>
+    <div close-sidemenu id='content' ui-view></div>
 
   </div>
 </div>
